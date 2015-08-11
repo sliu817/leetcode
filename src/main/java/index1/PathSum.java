@@ -1,9 +1,10 @@
-package index3;
+package index1;
 
 import model.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * Created by yduan on 1/30/15.
@@ -16,12 +17,14 @@ public class PathSum {
         return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
     }
 
+    // TODO iterative inorder,
     public boolean hasPathSumIterative(TreeNode root, int sum) {
         if (root == null) return false;
-        Queue<TreeNode> nodes = new LinkedList<TreeNode>();
-        Queue<Integer> values = new LinkedList<Integer>();
+        Queue<TreeNode> nodes = new LinkedList<>();
+        Queue<Integer> values = new LinkedList<>();
         nodes.add(root);
         values.add(root.val);
+
         while ( !nodes.isEmpty()) {
             TreeNode curr = nodes.poll();
             int sumVal = values.poll();
