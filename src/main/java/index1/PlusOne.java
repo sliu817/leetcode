@@ -5,14 +5,13 @@ package index1;
  */
 public class PlusOne {
     public int[] plusOne(int[] digits) {
-
-        for (int i = digits.length - 1; i >= 0; --i) {
-            if (digits[i] < 9) {
-                digits[i]++;
+        for (int index = digits.length - 1; index >= 0; index--) {
+            if (digits[index] < 9) {
+                digits[index] += 1;
                 return digits;
-            } else {
-                digits[i] = 0;
             }
+
+            digits[index] = 0;
         }
 
         int[] res = new int[digits.length + 1];

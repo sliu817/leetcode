@@ -16,11 +16,11 @@ public class RemoveDupsSortedList {
         while (curr != null) {
             if (prev.val == curr.val) {
                 prev.next = curr.next;
-                curr = prev.next;
             } else {
                 prev = curr;
-                curr = curr.next;
             }
+
+            curr = curr.next;
         }
 
         return head;

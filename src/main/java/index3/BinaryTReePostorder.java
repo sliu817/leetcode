@@ -19,7 +19,9 @@ public class BinaryTReePostorder {
 
         while (!stack.isEmpty()) {
             TreeNode curr = stack.peek();
-            if ((curr.left == null && curr.right == null) || curr.left == visited || curr.right == visited) {
+            if ((curr.left == null && curr.right == null) ||
+                    curr.left == visited ||
+                    curr.right == visited) {
                 result.add(curr.val);
                 stack.pop();
                 visited = curr;
